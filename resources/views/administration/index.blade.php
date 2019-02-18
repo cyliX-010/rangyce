@@ -42,7 +42,6 @@
 		    </div>
 		  </div>
 		</div>
-		<a class="addStationLink" href="#" data-toggle="modal" data-target="#add-modal">Add Station</a>
 
 
 		<!-- This section is for the table of the police station -->
@@ -50,7 +49,8 @@
 			<div class="row">
 				<div class="col-md-12">
 					<br />
-					<h5 align="center">Police Stations</h5>
+					<a href="#" data-toggle="modal" data-target="#add-modal" style="background-color: #2f70c3;padding: 10px; color: #000;float: right;">Add Station</a>
+					<h5 style="text-align: center; float: left;">Police Stations</h5>
 					<br />
 					<table class="table table-striped table-bordered" id="list-police-table">
 						<thead>
