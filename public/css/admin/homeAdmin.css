@@ -1,0 +1,17 @@
+.addStationLink{
+	position: absolute;
+	bottom: 100px;
+	height: 40px;
+	width: 150px;
+	left: 30px;
+	background-color: #66abe6;
+	color: white;
+	padding-top:10px;
+}
+.listStations{
+	position: absolute;
+	margin-top: 50px;
+	font-size: 10px;
+	
+		
+}

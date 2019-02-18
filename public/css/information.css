@@ -1,0 +1,237 @@
+body{
+	margin: 0 auto;
+	padding: 0px;
+	text-align: center;
+	font-family: sans-serif;
+	overflow-x: hidden;
+	background: #f5fafb;
+}
+
+a{
+	text-decoration: none;
+}
+
+li{
+	list-style: none;
+}
+
+header{
+	position: fixed;
+	top: 0px;
+	background: #66abe6;
+	width: 100%;
+	height: 33px;
+	font-weight: bold;
+	font-size: 22px;
+	color: #fff;
+	padding-top: 9px;
+	overflow: hidden;
+	z-index: 20;
+}
+
+header label{
+	position: relative;
+	top: -10px;
+}
+
+.h1{
+	text-align: left;
+}
+
+.h1 i{
+	position: absolute;
+	cursor: pointer;
+	color: #fff;
+	left: 10px;
+	z-index: 20;
+}
+
+.h1 i:hover{
+	cursor: pointer;
+}
+
+header img{
+	position: relative;
+	top: -3px;
+	width: 30px;
+	height: 30px;
+}
+
+/*.h2 {
+	position: relative;
+	top: -35px;
+	right: 10px;
+	text-align: right;
+}
+
+.color{
+	color: #fff;
+}*/
+
+.main{
+	margin-top: 100px;
+	margin-bottom: 20px;
+}
+
+.main-ctrl{
+	text-align: left;
+	width: 95%;
+	height: auto;
+	margin-left: 2%;
+}
+
+.form-ctrl{
+	border-radius: 5px;
+	border:1px solid #c6c6c6;
+	margin-bottom: 20px;
+}
+
+.lbl{
+	width: 82%;
+	margin-bottom: 10px;
+	margin-left: 10px; 
+}
+
+.lbltextArea{
+	width: 85%;
+	height: 70px;
+	margin-bottom: 10px;
+	border-radius: 5px;
+	margin-left: 10px; 
+	margin-top: 10px; 
+	padding: 5px;
+}
+
+
+.lbl-color{
+	color: #939090;
+	font-size: 12px;
+	margin-left: 10px;
+}
+
+.not-same{
+	width: 40%;
+	margin-right: 10px;
+}
+
+.same{
+	width: 34%;
+	height: auto;
+	margin-top: 0px;
+	margin-bottom: 10px;
+	margin-left: 10px; 
+}
+
+.not-same1{
+	width: 34%;
+	margin-top: 5px;
+	margin-left: 10px; 
+}
+
+.form-ctrl label b{
+	position: relative;
+	top: 10px;
+	margin-left: 10px;
+}
+
+.form1{
+	margin: 20px 0px 20px 10px;
+}
+
+.form-ctrl input[type="text"], input[type="number"], input[type="date"], input[type="time"]{
+	border-radius: 5px;
+	border:1px solid #c6c6c6;
+	padding: 6px 10px 6px 10px;
+}
+
+.main-btn-ctrl input[type="submit"]{
+	border-radius: 3px;
+	border:1px solid #398de3;
+	background: #398de3;
+	color: #fff;
+	width: 100%;
+	height: auto;
+	padding: 7px 0px 7px 0px;
+}
+
+/*.btn-ctrl{
+	position: fixed;
+	background: #fff;
+	bottom: 0px;
+	box-shadow: 5px 5px 13px #000;
+	width: 100%;
+	height: 60px;
+}
+
+.btn-ctrl ul li{
+	position: relative;
+	left: -15px;
+	display: inline-block;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+.btn-ctrl ul{
+	margin-top: 10px;
+}
+
+.btn-ctrl ul li i{
+	position: relative;
+	color: #5e5e5e;
+	font-size: 20px;
+}
+
+.btn-ctrl ul li a{
+	color: #5e5e5e;
+}
+
+.btn-ctrl ul:hover{
+	color: pointer;
+}*/
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background-color: #f4f4f4;
+  margin: 20% auto;
+  padding: 20px;
+  width: 70%;
+  box-shadow: 0 5px 8px 0px rgba(0, 0, 0, 0.2), 0 7px 20px 0px rgba(0, 0, 0, 0.17);
+  animation-name: modalopen;
+  animation-duration: 1s;
+}
+
+.closeBtn {
+  color: #ccc;
+  float: right;
+  font-size: 30px;
+}
+
+.closeBtn:hover, .closeBtn:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+@keyframes modalopen {
+  from {opacity: 0} 
+  to {opacity: 1}
+}
+
+@media only screen and (min-width: 460px) and (max-width: 999px){
+
+}
+
+@media only screen and (min-width: 100px) and (max-width: 459px){
+
+}

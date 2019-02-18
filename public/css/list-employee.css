@@ -1,0 +1,202 @@
+
+
+body{
+	margin: 0 auto;
+	padding: 0px;
+	text-align: center;
+	font-family: sans-serif;
+	overflow-x: hidden;
+	background: #f5fafb;
+}
+
+a{
+	text-decoration: none;
+}
+
+li{
+	list-style: none;
+}
+
+header{
+	position: fixed;
+	background: #66abe6;
+	width: 100%;
+	height: 33px;
+	font-weight: bold;
+	font-size: 22px;
+	color: #fff;
+	padding-top: 9px;
+	overflow: hidden;
+	z-index: 200;
+}
+
+header label{
+	position: relative;
+	top: -10px;
+}
+
+.h1{
+	text-align: left;
+}
+
+.h1 i{
+	position: absolute;
+	cursor: pointer;
+	color: #fff;
+	left: 10px;
+	z-index: 20;
+}
+
+.h1 i:hover{
+	cursor: pointer;
+}
+
+header img{
+	position: relative;
+	top: -3px;
+	width: 30px;
+	height: 30px;
+}
+
+.h2 {
+	position: relative;
+	top: -35px;
+	right: 10px;
+	text-align: right;
+}
+
+.color{
+	color: #fff;
+}
+
+.main{
+	position: relative;
+	top: 23px;
+	
+}
+
+.main-friend{
+	padding-top: 30px;
+}
+
+.main-center{
+	text-align: left;
+}
+
+.main-center img{
+	border-radius: 50px;
+	height: 50px;
+	width: 50px;
+}
+
+.main-center label{
+	position: relative;
+	top: -15px;
+	padding-left: 20px;
+}
+
+.main-btn{
+	position: relative;
+	text-align: right;
+	right: 50px;
+	top:-215px;
+}
+
+.main-btn ul li{
+	font-size: 30px;
+	padding-bottom: 20px;
+}
+
+.btn-ctrl{
+	position: fixed;
+	background: #fff;
+	bottom: 0px;
+	box-shadow: 5px 5px 13px #000;
+	/*border-top: 1px solid #66abe6;*/
+	width: 100%;
+	height: 60px;
+}
+
+.btn-ctrl ul li{
+	display: inline-block;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+.btn-ctrl ul{
+	margin-top: 10px;
+}
+
+.btn-ctrl ul li i{
+	position: relative;
+	color: #5e5e5e;
+	font-size: 20px;
+}
+
+.btn-ctrl ul li a{
+	color: #5e5e5e;
+}
+
+.btn-ctrl ul:hover{
+	color: pointer;
+}
+
+@media only screen and (min-width: 460px) and (max-width: 999px){
+	.btn-ctrl ul li{
+	    padding-left: 5%;
+	    padding-right: 0px;
+
+	  }
+
+	  .btn-ctrl ul{
+	    margin-top: 10px;
+	    margin-left: -10px;
+	  }
+
+	  .btn-ctrl ul li i{
+	      font-size: 18px;
+	  }
+
+	  .btn-ctrl span{
+	    font-size: 13px;
+	  } 
+}
+
+@media only screen and (min-width: 100px) and (max-width: 459px){
+	
+	.main-btn{
+		position: relative;
+		text-align: right;
+		right: 30px;
+		top:-213px;
+	}
+	
+	.main-btn ul li{
+		font-size: 25px;
+		padding-bottom: 22px;
+	}
+
+	.btn-ctrl{
+		width: 100%;
+		height: 60px;
+	}
+
+	.btn-ctrl ul li{
+		padding-left: 2%;
+		padding-right: 0px;
+
+	}
+
+	.btn-ctrl ul{
+		margin-top: 10px;
+		margin-left: -30px;
+	}
+
+	.btn-ctrl ul li i{
+	    font-size: 18px;
+	}
+
+	.btn-ctrl label{
+		font-size: 13px;
+	}	
+}

@@ -1,0 +1,110 @@
+body{
+	margin: 0 auto;
+	padding: 0px;
+	text-align: center;
+	font-family: sans-serif;
+	overflow-x: hidden;
+	background: #f5fafb;
+}
+
+a{
+	text-decoration: none;
+}
+
+li{
+	list-style: none;
+}
+
+header{
+	background: #66abe6;
+	width: 100%;
+	height: 33px;
+	font-weight: bold;
+	font-size: 22px;
+	color: #fff;
+	padding-top: 9px;
+	overflow: hidden;
+}
+
+header label{
+	position: relative;
+	top: 0px;
+}
+
+.h1{
+	position: relative;
+	padding-left: 10px;
+	text-align: left;
+	font-size: 19px;
+	z-index: 100;
+	width: 50%;
+	height: auto;	
+}
+
+.h1 a{
+	color: #fff;
+}
+
+.h1 label{
+	padding-left: 10px;
+}
+
+.h2 {
+	position: relative;
+	top: -25px;
+	right: 10px;
+	text-align: right;
+}
+
+.color{
+	color: #fff;
+}
+
+.chat{
+	text-align: left;
+	border-bottom: 1px solid #ccc;
+}
+
+.chat-ctrl{
+	padding-top: 10px;
+	margin-top: -50px;
+	margin-left: 100px;
+}
+
+.chat-ctrl div label{
+	color: #000;
+}
+
+.chat div{
+	margin: -15px 0px 0px 0px;
+}
+
+.chat img{
+	margin-top: 10px;
+	margin-left: 10px;
+	border-radius: 80px;
+	width: 60px;
+	height: 60px;
+}
+
+.b{
+	color: #858282;
+	white-space: nowrap; 
+    width: 90%; 
+    overflow: hidden;
+    text-overflow: ellipsis; 
+}
+
+.hour{
+	color: #adabab;
+}
+
+
+
+@media only screen and (min-width: 460px) and (max-width: 999px){
+
+}
+
+@media only screen and (min-width: 100px) and (max-width: 459px){
+
+}

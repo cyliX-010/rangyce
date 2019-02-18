@@ -1,0 +1,109 @@
+body{
+	margin: 0 auto;
+	padding: 0px;
+	text-align: center;
+	font-family: sans-serif;
+	overflow-x: hidden;
+	background: #f5fafb;
+}
+
+a{
+	text-decoration: none;
+}
+
+li{
+	list-style: none;
+}
+
+header{
+	position: fixed;
+	background: #66abe6;
+	top: 0px;
+	width: 100%;
+	height: 33px;
+	font-weight: bold;
+	font-size: 22px;
+	color: #fff;
+	padding-top: 9px;
+	overflow: hidden;
+	z-index: 100;
+}
+
+header label{
+	position: relative;
+	top: 0px;
+}
+
+.h1{
+	padding-left: 10px;
+	text-align: left;
+	font-size: 19px;	
+}
+
+.h1 a{
+	color: #fff;
+}
+
+.h1 label{
+	padding-left: 10px;
+}
+
+.color{
+	padding-left: 15px;
+	color: #9e9d9d;
+}
+
+.main-header label{
+	padding-right: 250px;
+}
+
+.main-ctrl{
+	padding-top: 15px;
+	border-top: 1px solid #ccc;
+}
+
+.main{
+	position: relative;
+	top: 42px;
+	padding-bottom: 8px;
+}
+
+.main-center{
+	position: relative;
+	top: -7px;
+	text-align: left;
+}
+.main-center img{
+	padding-top: 20px;
+	padding-left: 10px;
+	width: 120px; 
+	height: 120px;
+}
+
+.main-center p{
+	font-size: 15px;
+	text-align: justify;
+	margin-left: 28%;
+	margin-right: 5%;
+	margin-top: -125px;
+}
+
+@media only screen and (min-width: 460px) and (max-width: 999px){
+
+}
+
+@media only screen and (min-width: 100px) and (max-width: 459px){
+
+	.main-center img{
+		width: 90%;
+	}	
+
+	.main-center p{
+		margin: 10px 10px 10px 10px;
+	}
+
+
+	.main-header label{
+		padding-right: 30%;
+	}
+}

@@ -1,0 +1,173 @@
+body{
+	margin: 0 auto;
+	padding: 0px;
+	text-align: center;
+	font-family: sans-serif;
+	overflow-x: hidden;
+	background: #f5fafb;
+}
+
+a{
+	text-decoration: none;
+}
+
+li{
+	list-style: none;
+}
+
+header{
+	position: fixed;
+	background: #66abe6;
+	top: 0px;
+	width: 100%;
+	height: 33px;
+	font-weight: bold;
+	font-size: 22px;
+	color: #fff;
+	padding-top: 9px;
+	overflow: hidden;
+	z-index: 100;
+}
+
+header label{
+	position: relative;
+	top: 0px;
+}
+
+.h1{
+	padding-left: 10px;
+	text-align: left;
+	font-size: 19px;	
+}
+
+.h1 a{
+	color: #fff;
+}
+
+.h1 label{
+	padding-left: 10px;
+}
+
+.color{
+	padding-left: 15px;
+	color: #9e9d9d;
+}
+
+.myboxes{
+	position: absolute;
+	width: 140px;
+	height: 155px;
+	border: 1px solid #ccc;
+	background: #fff;
+	padding: 0px;
+	margin-top: 13px;
+	margin-right: 32px;
+	text-align: left;
+	display: none;
+	right: 0px;
+}
+
+.myboxes ul li{
+	position: relative;
+	/*background: green;*/
+	padding-bottom: 10px;
+	width: 140px;
+	top: -5px;
+	right: 30px;
+}
+
+.myboxes ul li a{
+	color: #000;
+}
+
+
+.main{
+	position: relative;
+	margin-top: 42px;
+}
+
+.main-header{
+	position: fixed;
+	width: 100%;
+	height: auto;
+	background: #fff;
+	padding: 10px 0px 13px 20px;
+	text-align: left;
+	z-index: 100;
+}
+
+.main-header label{
+	padding-left: 15px;
+}
+
+
+.main-header input[type="text"]{
+	position: relative;
+	left: 5px;
+	border: none;
+	border-bottom: 1px solid #ccc;
+	width: 60%;
+	outline: none;
+}
+
+.main-center{
+	position: relative;
+
+	top: 50px;
+	text-align: left;
+}
+
+.main-center img{
+	border-radius: 40px;
+	height: 50px;
+	width: 50px;
+}
+
+.main-center{
+	margin-left: 10%;
+}
+
+.main-center label{
+	position: relative;
+	color: #000;
+	top: -20px;
+	padding-left: 50px;
+}
+
+.main-center ul li{
+	padding-bottom: 10px;
+}
+
+
+@media only screen and (min-width: 460px) and (max-width: 999px){
+	.main-header input[type="text"]{
+		width: 53%;
+	}
+}
+
+@media only screen and (min-width: 100px) and (max-width: 459px){
+
+	.myboxes{
+		margin-right: 12px;
+	}
+
+	
+	.main-header a{
+		position: relative;
+	left: -2%;
+	}
+
+	.main-center{
+		margin-left: -10px;
+	}
+
+	.main-header{		
+		padding: 10px 0px 13px 0px;
+	}
+
+	.main-header input[type="text"]{
+		left: 5px;
+		width: 40%;
+		outline: none;
+	}
+}

@@ -1,0 +1,188 @@
+body{
+	margin: 0 auto;
+	padding: 0px;
+	text-align: center;
+	font-family: sans-serif;
+	overflow-x: hidden;
+	background: #f5fafb;
+}
+
+a{
+	text-decoration: none;
+}
+
+li{
+	list-style: none;
+}
+
+header{
+	position: fixed;
+	top: 0px;
+	background: #66abe6;
+	width: 100%;
+	height: 33px;
+	font-weight: bold;
+	font-size: 22px;
+	color: #fff;
+	padding-top: 9px;
+	overflow: hidden;
+	z-index: 20;
+}
+
+header label{
+	position: relative;
+	top: -10px;
+}
+
+.h1{
+	text-align: left;
+}
+
+.h1 i{
+	position: absolute;
+	cursor: pointer;
+	color: #fff;
+	left: 10px;
+	z-index: 20;
+}
+
+.h1 i:hover{
+	cursor: pointer;
+}
+
+header img{
+	position: relative;
+	top: -3px;
+	width: 30px;
+	height: 30px;
+}
+
+/*.h2 {
+	position: relative;
+	top: -35px;
+	right: 10px;
+	text-align: right;
+}
+
+.color{
+	color: #fff;
+}*/
+
+.main{
+	text-align: left;
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
+
+.label-color{
+	color: #46a1f3;
+}
+
+.main1-info{
+	margin-top: -80px;
+	margin-bottom: 35px;
+	margin-left: 120px;
+}
+
+.main1-btn{
+	position: relative;
+	margin-top: -100px;
+	margin-left: 300px;
+}
+
+.main1-btn div{
+	position: relative;
+	text-align: right;
+	margin-bottom: 15px;
+	right: 10px;
+}
+
+.main1-btn div a{
+	font-size: 13px;
+	border-radius: 5px;
+	box-shadow: 2px 5px 10px #ccc;
+	margin-top: 10px;
+	padding:5px 10px 5px 10px ;
+	color: #fff;
+	background: #378be5;
+}
+
+.main1 img{
+	margin-top: 5px;
+	margin-left: 20px;
+	border-radius: 5px;
+	width: 85px;
+	height: auto;
+}
+
+.main1-info div{
+	padding-top: 5px;
+}
+
+.main2{
+	border-top: 1px solid #a3a3a3;
+	margin-top: 35px;
+	width: 100%;
+	height: auto;
+}
+
+.main2 label{
+	position: relative;
+	top: 20px;
+	margin-left: 50px;
+}
+
+.education-background{
+	margin-top: 10px;
+	margin-left: 20px;
+}
+
+.main2 div{
+	font-size: 15px;
+	margin-bottom: 5px;
+}
+
+
+
+.btn1{
+	position: relative;
+}
+
+@media only screen and (min-width: 460px) and (max-width: 999px){
+
+	.main1 img{
+		margin-bottom: 8px;
+	}
+
+
+	.main1-btn{
+		margin-top: -113px;
+		/*margin-left: 0px;*/
+	}
+
+	
+
+}
+
+@media only screen and (min-width: 100px) and (max-width: 459px){
+	
+	.btn1{
+		top: -18px;
+		left: -140px;
+	}
+
+	.main2-ctrl{
+		margin-top: -23px;
+	}
+
+	.main1-btn{
+		margin-top: -20px;
+		margin-left: 0px;
+	}
+
+	.main1-btn div{
+		text-align: right;
+		margin-bottom: 0px;
+		right: 10px;
+	}
+}

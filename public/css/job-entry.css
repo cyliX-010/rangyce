@@ -1,0 +1,134 @@
+*{
+	margin: 0 auto;
+	padding: 0px;
+	text-align: center;
+	font-family: sans-serif;
+	overflow-x: hidden;
+}
+
+body{
+	margin: 0 auto;
+	padding: 0px;
+	text-align: center;
+	font-family: sans-serif;
+	overflow-x: hidden;
+	background: #f5fafb;
+}
+
+a{
+	text-decoration: none;
+}
+
+li{
+	list-style: none;
+}
+
+header{
+	position: fixed;
+	background: #66abe6;
+	width: 100%;
+	height: 33px;
+	font-weight: bold;
+	font-size: 22px;
+	color: #fff;
+	padding-top: 9px;
+	overflow: hidden;
+	z-index: 200;
+}
+
+header label{
+	position: relative;
+	top: -10px;
+}
+
+
+header img{
+	position: relative;
+	top: -3px;
+	width: 30px;
+	height: 30px;
+}
+
+.main{
+	margin-top: 57px;
+	margin-bottom: 30px;
+}
+
+.main-label{
+	font-weight: bold;
+	font-size: 18px;
+}
+
+.main-ctrl form section label{
+	font-size: 13px;
+	font-weight: bold;
+	color: #ccc;
+}
+
+.main form section div input[type="text"], input[type="number"], input[type="time"], input[type="email"], select{
+	border: none;
+	border-bottom: 1px solid #c6c4c4;
+	background: none;
+	text-align: left;
+	padding: 10px 0px 10px 15px;
+	font-weight: bold;
+	margin-top: 5px;
+	margin-bottom: 15px;
+}
+
+.main-ctrl{
+	margin-top:30px;
+}
+
+.main div{
+	text-align: left;
+	height: auto;
+
+}
+
+.main div form section{
+	text-align: left;
+	width: 90%;
+	height: auto;
+}
+
+.line input[type="text"], input[type="email"], select{
+	width: 95%;
+}
+
+.space{
+	margin-left: 42%; 
+}
+
+.width{
+	width: 43%;
+	height: auto;
+}
+
+.width1{
+	position: relative;
+	top: -2px;
+	margin-left: 10px;
+	width: 45%;
+	height: auto;
+}
+
+.main-ctrl form input[type="submit"]{
+	margin-top: 15px;
+	background: #3598db;
+	border: 1px solid #3598db;
+	color: #fff;
+	width: 73%;
+	font-weight: bold;
+	font-size: 15px;
+	padding: 10px 0px 10px 0px;
+	cursor: pointer;
+}
+
+@media only screen and (min-width: 460px) and (max-width: 999px){
+
+}
+
+@media only screen and (min-width: 100px) and (max-width: 459px){
+
+}
