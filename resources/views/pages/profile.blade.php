@@ -8,58 +8,72 @@
 	<link href="{{ asset('css/feed/feed.css') }}" rel="stylesheet">
 </head>
 <body>
-	<header>
-		<div class="h1"><a href="home.html"><i class="fa fa-arrow-left"></i></a><label>Profile</label></div>
-	</header>
+	@include('layouts.app');
 
-	<section class="main">
-		
+	<section class="main" >
 		<section>
-			<img src="">
+			<img class = "userdefaultImg" src="{{ asset('images/image/abadiez.jpg') }}">
 			<div><label>Jackelyn Sayson</label></div>
 		</section>
 
-		<section>
+		<section style="overflow: auto;">
 			<table>
 				<tr>
-					<td>Name</td>
-					<td>Ma. Jackie Lyn Sayson</td>
+					<td><label class="textAttribute">Firstname</label></td>
+					<td><input class="porfilefldAttribute" name="firstname" ></td>
 				</tr>
 
 				<tr>
-					<td>Gender</td>
-					<td>Female</td>
+					<td><label class="textAttribute">Lastname</label></td>
+					<td><input class="porfilefldAttribute" name="lastname" ></td>
 				</tr>
 
 				<tr>
-					<td>Birthday</td>
-					<td>September 28,1987</td>
+					<td><label class="textAttribute">Birthdate</label></td>
+					<td><input class="porfilefldAttribute" name="birthdate" ></td>
 				</tr>
 
 				<tr>
-					<td>Address</td>
-					<td>Cayam, Naga, Cebu</td>
+					<td><label class="textAttribute">State</label></td>
+					<td><input class="porfilefldAttribute" name="state" ></td>
 				</tr>
 
 				<tr>
-					<td>Civil Status</td>
-					<td>Single</td>
+					<td><label class="textAttribute">City</label></td>
+					<td><input class="porfilefldAttribute" name="city" ></td>
 				</tr>
 
 				<tr>
-					<td>Religion</td>
-					<td>Roman Catholic</td>
+					<td><label class="textAttribute">Street</label></td>
+					<td><input class="porfilefldAttribute" name="street" ></td>
 				</tr>
 
 				<tr>
-					<td>Mobile</td>
-					<td>09576465456</td>
+					<td><label class="textAttribute">Zip Code</label></td>
+					<td><input class="porfilefldAttribute" name="zip" ></td>
 				</tr>
 
 				<tr>
-					<td>Email</td>
-					<td>kieasffgs0918@gmail.com</td>
+					<td><label class="textAttribute">Mobile Number</label></td>
+					<td><input class="porfilefldAttribute" name="mobile" ></td>
 				</tr>
+
+				<!-- Account Settings -->
+				<tr>
+					<td><label class="textAttribute">Username</label></td>
+					<td><input class="porfilefldAttribute" name="username" ></td>
+				</tr>
+
+				<tr>
+					<td><label class="textAttribute">Email</label></td>
+					<td><input class="porfilefldAttribute" name="email" ></td>
+				</tr>
+
+				<tr>
+					<td><label class="textAttribute">Password</label></td>
+					<td><input class="porfilefldAttribute" name="password" ></td>
+				</tr>
+
 			</table>
 		</section>
 
@@ -69,6 +83,7 @@
 
 	</section>
 
-		@include('layouts.bottom')
+		
 </body>
 </html>
+@include('layouts.bottom')

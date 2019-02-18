@@ -3,8 +3,8 @@ body{
 	padding: 0px;
 	text-align: center;
 	font-family: sans-serif;
-	overflow-x: hidden;
-	background: #f5fafb;
+	overflow-y: auto;
+	background: #f5fafb;	
 }
 
 a{
@@ -49,6 +49,21 @@ header label{
 	padding-left: 15px;
 }
 
+.label{
+	text-align: left;
+}
+.porfilefldAttribute{
+	border:1px solid #9494e4; 
+	border-top-left-radius: 10px; 
+	border-bottom-right-radius: 10px; 
+	background: transparent; 
+	color: #000000;  
+	margin-top: 10px; 
+	padding: 10px 6px 10px 50px; 
+	width: 75%; 
+	height: 30px;
+	outline: none;
+}
 header img{
 	position: absolute;	
 	top: 5px;
@@ -57,6 +72,12 @@ header img{
 	height: 30px;
 }
 
+.userdefaultImg{
+	margin-top: -10px;
+	margin-left: 20px;
+	width: 100px;
+	height: 100px;
+}
 .btn-ctrl{
 	position: fixed;
 	background: #fff;

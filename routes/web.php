@@ -137,5 +137,6 @@ Route::post('/admin/home', 'StationController@save');*/
 
 // Connected to Controller
 Route::get('/adminSide/add_station', 'adminStationController@create');
+
 Route::get('/adminSide/home', 'adminStationController@index');
 Route::post('/adminSide/add_station', 'adminStationController@store')->name('adminStation');

@@ -78,18 +78,19 @@
 <script type="text/javascript">					
 $('#approve_accidents').click(function(){
 	Swal.fire({
-	  title: 'Are you sure?',
-	  text: "You won't be able to revert this!",
+	  title: '',
+	  text: "Are You Sure You Want To Submit Report?",
 	  type: 'warning',
+	  customClass: 'swal-wide',
 	  showCancelButton: true,
 	  confirmButtonColor: '#3085d6',
 	  cancelButtonColor: '#d33',
-	  confirmButtonText: 'Yes, delete it!'
+	  confirmButtonText: 'Yes, submit it!'
 	}).then((result) => {
 	  if (result.value) {
 	    Swal.fire({
 	      type: 'success',
-	      title: 'Your work has been saved',
+	      title: 'Successfully Reported',
 	      showConfirmButton: false,
 	      timer: 1500
 	    })
