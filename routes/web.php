@@ -107,10 +107,12 @@ Route::get('/admin/register', function () {
 Route::get('/adminSide/home', function () {
     return view('administration\index');
 });
-Route::get('/adminSide/add_station', function () {
-    return view('administration\addStation');
-});
+// Route::get('/adminSide/add_station', function () {
+//     return view('administration\addStation');
+// });
 
+Route::get('add/new/station', ['uses' => 'AdminController@addNewStation'])->name('add_new_station');
+Route::get('get/list/station', ['uses' => 'AdminController@getListStation'])->name('get_list_Station');
 
 
 
