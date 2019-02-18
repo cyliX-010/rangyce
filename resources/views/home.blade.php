@@ -62,7 +62,7 @@
 			</a>
 			
 
-			<a href="{{url('station/create')}}"> To Admin</a>
+			<a href="{{url('adminSide/home')}}"> To Admin</a>
 		</section>
 
 	</section>
