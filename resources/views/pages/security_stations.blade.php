@@ -45,7 +45,7 @@
 	    					var address = data[i].state +' '+ data[i].street +' '+ data[i].city;
 	    					$('#stations').append(  
 							'<div class="station-div-parent">'+
-								'<a class="police_div" href="/page/security_report_type" data-policeId="1">'+
+								'<a class="police_div" href="police/station/report/'+data[i].id+'" data-policeId="1">'+
 									'<div>'+
 										'<img src="{{ asset('images/hospital/southGeneral.jpg') }}" alt="hospital picture">'+					
 										'<section class="medical-info">'+

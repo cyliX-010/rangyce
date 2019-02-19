@@ -95,4 +95,20 @@ class AdminController extends Controller
 		$police_info = $police = \App\police_station::get();
 		return response()->json($police);
 	}
+
+	public function submitStationReport($station_id)
+	{
+		$station = \App\police_station::whereId((int)$station_id)->get();
+		return view('pages.security_report_type', compact('station'));
+	}
+
+	public function submitIncidentsReport(Request $request)
+	{
+		$incidents = new \App\Report;
+		$incidents->user_id = Auth::user()->id;
+		$incidents->police_station_id = $request->station_id;
+		$incidents->incidents = $request->incidents;
+		$incidents->save();
+		return response()->json(['succes' => true]);
+	}
 }
