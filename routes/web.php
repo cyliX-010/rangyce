@@ -111,12 +111,9 @@ Route::get('/adminSide/home', function () {
 //     return view('administration\addStation');
 // });
 
-Route::get('add/new/station', ['uses' => 'AdminController@addNewStation'])->name('add_new_station');
+Route::post('add/new/station', ['uses' => 'AdminController@addNewStation'])->name('add_new_station');
 Route::get('get/list/station', ['uses' => 'AdminController@getListStation'])->name('get_list_Station');
-
-
-
-
+Route::get('get/police/station/info', ['uses' => 'AdminController@getPoliceInfo'])->name('get_police_info');
 
 Auth::routes();
 
