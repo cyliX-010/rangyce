@@ -20,63 +20,59 @@
 		
 
 		<section class="security-btn-ctrl">
-
-			<section class="security-btn-ctrl1">
-				
+			<section class="security-btn-ctrl1">				
 				<div class="security-one">
-
-					<a id="approve_accidents" href="#">
-						<div class="security-btn">
-							<img src="{{ asset('images/security/1.png') }}" alt="gallery image" />
-							<p>Accidents</p>
-						</div>
-					</a>		
-					
-					<a href="approve_message.html">
-						<div class="security-btn">
-							<img src="{{ asset('images/security/3.png') }}" alt="gallery image" />
-							<p>Crime Report</p>
-						</div>
-					</a>
-					
-					<a href="approve_message.html">
-						<div class="security-btn">
-							<img src="{{ asset('images/security/2.png') }}" alt="gallery image" />
-							<p>Fire Alarm</p>
-						</div>
-					</a>
-					
-					<a href="approve_message.html">
-						<div class="security-btn">
-							<img src="{{ asset('images/security/4.png') }}" alt="gallery image" />
-							<p>Trouble Alarm</p>
-						</div>
-					</a>
-					
-					<a href="approve_message.html">
-						<div class="security-btn">
-							<img src="{{ asset('images/security/5.png') }}" alt="gallery image" />
-							<p>Drug Abuse</p>
-						</div>
-					</a>
-					
-					<a href="approve_message.html">
-						<div class="security-btn">
-							<img src="{{ asset('images/security/6.png') }}" alt="gallery image" />
-							<p>Report Abuse</p>
-						</div>
-					</a>
-					
+					@foreach($station as $st)
+						<a class="approve_accidents" href="#" data-station_id="{{$st->id}}" data-report_type="Accidents">
+							<div class="security-btn">
+								<img src="{{ asset('images/security/1.png') }}" alt="gallery image" />
+								<p>Accidents</p>
+							</div>
+						</a>		
+						
+						<a class="approve_accidents" href="#" data-station_id="{{$st->id}}" data-report_type="Crime Report">
+							<div class="security-btn">
+								<img src="{{ asset('images/security/3.png') }}" alt="gallery image" />
+								<p>Crime Report</p>
+							</div>
+						</a>
+						
+						<a class="approve_accidents" href="#" data-station_id="{{$st->id}}" data-report_type="Fire Alarm">
+							<div class="security-btn">
+								<img src="{{ asset('images/security/2.png') }}" alt="gallery image" />
+								<p>Fire Alarm</p>
+							</div>
+						</a>
+						
+						<a class="approve_accidents" href="#" data-station_id="{{$st->id}}" data-report_type="Trouble Alarm">
+							<div class="security-btn">
+								<img src="{{ asset('images/security/4.png') }}" alt="gallery image" />
+								<p>Trouble Alarm</p>
+							</div>
+						</a>
+						
+						<a class="approve_accidents" href="#" data-station_id="{{$st->id}}" data-report_type="Drug Abuse">
+							<div class="security-btn">
+								<img src="{{ asset('images/security/5.png') }}" alt="gallery image" />
+								<p>Drug Abuse</p>
+							</div>
+						</a>
+						
+						<a class="approve_accidents" href="#" data-station_id="{{$st->id}}" data-report_type="Report Abuse">
+							<div class="security-btn">
+								<img src="{{ asset('images/security/6.png') }}" alt="gallery image" />
+								<p>Report Abuse</p>
+							</div>
+						</a>
+					@endforeach					
 				</div>
-
 			</section>
-
 		</section>
 	</section>
 </body>
 @include('libraries.libraries')
 <script type="text/javascript">					
-$('#approve_accidents').click(function(){
+$('.approve_accidents').click(function(){
 	Swal.fire({
 	  title: '',
 	  text: "Are You Sure You Want To Submit Report?",
@@ -88,12 +84,20 @@ $('#approve_accidents').click(function(){
 	  confirmButtonText: 'Yes, submit it!'
 	}).then((result) => {
 	  if (result.value) {
-	    Swal.fire({
-	      type: 'success',
-	      title: 'Successfully Reported',
-	      showConfirmButton: false,
-	      timer: 1500
-	    })
+
+	  	$.ajax({
+	  		headers: { 'X-CSRF-TOKEN': '{{ csrf_token() }}' },
+	  		url: '{{route('submit_incidents_report')}}',
+	  		type: 'GET',
+	  		data: {
+	  			station_id: $(this).data('station_id'),
+	  			incidents: $(this).data('report_type'),
+	  		},
+	  		success:function(data){ 
+	  			console.log(data);
+	  		    Swal.fire('','Successfuly Added','success');                   
+	  		},
+	  	});	    
 	  }
 	});
 });

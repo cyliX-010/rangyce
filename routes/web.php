@@ -53,9 +53,9 @@ Route::get('/page/security_stations', function () {
     return view('pages\security_stations');
 });
 
-Route::get('/page/security_report_type', function () {
-    return view('pages\security_report_type');
-});
+// Route::get('/page/security_report_type/{id}', function () {
+//     return view('pages\security_report_type');
+// });
 
 //Hospital Link
 Route::get('/page/hospitals', function () {
@@ -84,13 +84,6 @@ Route::get('/page/home_wantTowork', function () {
     return view('pages\home_wantTowork');
 });
 
-
-
-
-
-
-
-
 /*FOR ADMIN USERS*/
 //admin login link
 Route::get('/admin/login', function () {
@@ -111,11 +104,11 @@ Route::get('/adminSide/home', function () {
 //     return view('administration\addStation');
 // });
 
-Route::get('add/new/station', ['uses' => 'AdminController@addNewStation'])->name('add_new_station');
+Route::post('add/new/station', ['uses' => 'AdminController@addNewStation'])->name('add_new_station');
 Route::get('get/list/station', ['uses' => 'AdminController@getListStation'])->name('get_list_Station');
-
-
-
+Route::get('get/police/station/info', ['uses' => 'AdminController@getPoliceInfo'])->name('get_police_info');
+Route::get('page/police/station/report/{id}', ['uses' => 'AdminController@submitStationReport'])->name('station_report_type');
+Route::get('submit/incidents/report', ['uses' => 'AdminController@submitIncidentsReport'])->name('submit_incidents_report');
 
 
 Auth::routes();
