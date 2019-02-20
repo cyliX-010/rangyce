@@ -8,6 +8,8 @@ use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
+
+	//Add Station Function
 	public function addNewStation(Request $request)
 	{		
 		try {

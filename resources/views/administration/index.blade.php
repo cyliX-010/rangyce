@@ -21,7 +21,7 @@
 			        </button>
 		      	</div>
 		      <div class="modal-body">
-		        <div>
+		        <div>s
 		        	<input type="text" id="name_of_station" placeholder="Name of Station" required>
 		        	<input type="text" id="state" placeholder="State" required>
 		        </div>
