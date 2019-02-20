@@ -12,6 +12,8 @@ use Illuminate\Support\Facades\Input;
 
 class AdminController extends Controller
 {
+
+	//Add Station Function
 	public function addNewStation(Request $request)
 	{		
 		$rules = array(
