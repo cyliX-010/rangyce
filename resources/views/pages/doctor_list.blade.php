@@ -5,6 +5,8 @@
 	<title>Prototype</title>
 	<link href="{{ asset('css/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
 	<link href="{{ asset('css/doctor.css') }}" rel="stylesheet">
+
+	@include('libraries.css')
 </head>
 <body>
 	<header>
@@ -20,120 +22,41 @@
 		<section class="m1-label">
 			<label>Select Your Doctor</label>
 		</section>
+
+		
+
 		<section class="m1-main">
+			@foreach($doctor_list as $doctor)
 
-			<a href="/page/doctor_profile">
-				<div>
-					<img src="{{ asset('images/doctor/1.jpg') }}" alt="hospital picture">
-					<section class="medical-info">
-						<section>
-							<label>Dr. A.H. Harunar Rashid</label>
+			<div class="station-div-parent">
+				<a class="police_div" href="#" data-policeId="1">
+					<div>
+						<img src="{{ $doctor->file_path }}" alt="hospital picture">					
+						<section class="medical-info">
+							<input type="hidden" id="station_id" value="{{ $doctor->id }}">
+							<section>
+								<label style="color: #696764">&nbsp;&nbsp;&nbsp;&nbsp;{{ $doctor->name }}</label>
+								
+							</section>
+							@switch($doctor->user_type)
+								@case(31)
+									<label style="color: #696764">&nbsp;&nbsp;&nbsp;&nbsp;Dentist</label>
+								@break
+								@case(32)
+									<label style="color: #696764">&nbsp;&nbsp;&nbsp;&nbsp;Surgeon</label>
+								@break
+								@case(33)
+									<label style="color: #696764">&nbsp;&nbsp;&nbsp;&nbsp;Cardiologist</label>
+								@break
+								@case(34)
+									<label style="color: #696764">&nbsp;&nbsp;&nbsp;&nbsp;Neurologist</label>
+								@break
+							@endswitch	
 						</section>
-						<section>
-							<label>Child Specialist, DMCH</label>
-						</section>
-					</section>
-				</div>
-			</a>
-
-			<a href="/page/doctor_profile">
-				<div>
-					<img src="{{ asset('images/doctor/2.jpg') }}" alt="hospital picture">
-					<section class="medical-info">
-						<section>
-							<label>Dr. Muhib</label>
-						</section>
-						<section>
-							<label>Child Specialist</label>
-						</section>
-					</section>
-				</div>
-			</a>
-
-			<a href="/page/doctor_profile">
-				<div>
-					<img src="{{ asset('images/doctor/3.jpg') }}" alt="hospital picture">
-					<section class="medical-info">
-						<section>
-							<label>Regina Benjamin</label>
-						</section>
-						<section>
-							<label>Physician, Surgeon</label>
-						</section>
-					</section>
-				</div>
-			</a>
-				
-			<a href="/page/doctor_profile">
-				<div>
-					<img src="{{ asset('images/doctor/4.jpg') }}" alt="hospital picture">
-					<section class="medical-info">
-						<section>
-							<label>Dr. Muhammdullah</label>
-						</section>
-						<section>
-							<label>Heart Specialist, DMCH</label>
-						</section>
-					</section>
-				</div>
-			</a>
-
-			<a href="/page/doctor_profile">
-				<div>
-					<img src="{{ asset('images/doctor/7.jpg') }}" alt="hospital picture">
-					<section class="medical-info">
-						<section>
-							<label>Susan Lim</label>
-						</section>
-						<section>
-							<label>Entrepreneur, Scientist, Surgeon</label>
-						</section>
-					</section>
-				</div>
-			</a>
-
-			<a href="/page/doctor_profile">
-				<div>
-					<img src="{{ asset('images/doctor/4.jpg') }}" alt="hospital picture">
-					<section class="medical-info">
-						<section>
-							<label>Dr. Manawar Hossain</label>
-						</section>
-						<section>
-							<label>Kidny Specialist, DMCH</label>
-						</section>
-					</section>
-				</div>
-			</a>
-
-			<a href="/page/doctor_profile">
-				<div>
-					<img src="{{ asset('images/doctor/6.jpg') }}" alt="hospital picture">
-					<section class="medical-info">
-						<section>
-							<label>Vicki Belo</label>
-						</section>
-						<section>
-							<label>Physician, Surgeon</label>
-						</section>
-					</section>
-				</div>
-			</a>
-
-			<a href="/page/doctor_profile">	
-				<div>
-					<img src="{{ asset('images/doctor/5.jpg') }}" alt="hospital picture">
-					<section class="medical-info">
-						<section>
-							<label>Dr. Mahmudul Hasan</label>
-						</section>
-						<section>
-							<label>Child Specialist, DMCH</label>
-						</section>
-					</section>
-				</div>
-			</a>
-
+					</div>
+				</a>
+			</div>		
+			@endforeach	
 		</section>
 	</section>
 	

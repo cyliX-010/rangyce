@@ -62,10 +62,6 @@ Route::get('/page/hospitals', function () {
     return view('pages\hospital_list');
 });
 
-Route::get('/page/doctor', function () {
-    return view('pages\doctor_list');
-});
-
 Route::get('/page/doctor_profile', function () {
     return view('pages\doctor_profile');
 });
@@ -96,19 +92,41 @@ Route::get('/admin/register', function () {
     return view('auth\adminRegister');
 });
 
+
+
+
 //HOME Admin Link
 Route::get('/adminSide/home', function () {
     return view('administration\index');
 });
+
+Route::get('/adminSide/hospitals', function () {
+    return view('administration\admin_hospital');
+});
+
 // Route::get('/adminSide/add_station', function () {
 //     return view('administration\addStation');
 // });
 
+
+
+//POLICE STATION
 Route::post('add/new/station', ['uses' => 'AdminController@addNewStation'])->name('add_new_station');
 Route::get('get/list/station', ['uses' => 'AdminController@getListStation'])->name('get_list_Station');
 Route::get('get/police/station/info', ['uses' => 'AdminController@getPoliceInfo'])->name('get_police_info');
 Route::get('page/police/station/report/{id}', ['uses' => 'AdminController@submitStationReport'])->name('station_report_type');
 Route::get('submit/incidents/report', ['uses' => 'AdminController@submitIncidentsReport'])->name('submit_incidents_report');
+
+//HOSPITALS
+Route::get('get/list/hospitals', ['uses' => 'AdminController@getListHospitals'])->name('get_list_Hospital');
+Route::post('add/new/hospitals', ['uses' => 'AdminController@addNewHospitals'])->name('add_new_hospitals');
+Route::get('get/hospital/info', ['uses' => 'AdminController@getHospitalInfo'])->name('get_hospital_info');
+
+//DOCTORS
+Route::post('add/new/doctors', ['uses' => 'AdminController@addNewDoctors'])->name('add_new_doctors');
+Route::get('/page/doctor/{id}', ['uses' => 'AdminController@getDoctorList']);
+
+
 
 
 Auth::routes();

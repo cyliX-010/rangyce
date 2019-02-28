@@ -29,7 +29,6 @@
 				<div class="input">
 					<input type="password" placeholder="Password" name="password" required style = "border:1px solid #9494e4; border-top-left-radius: 10px; border-bottom-right-radius: 10px; background: transparent; color: #000000;  margin-bottom: 15px; padding: 10px 6px 10px 50px; width: 65%; outline: none;">
 				</div>
-
 				<!-- Check box -->
 				<div class="checkbox">
 	                <label>

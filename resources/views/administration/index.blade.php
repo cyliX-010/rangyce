@@ -47,6 +47,9 @@
 					<div class="col-md-6">
 						<div class="form-group">
 						    <input type="file" class="form-control-file" id="file_path"  accept="image/*">
+						    <center>
+						    	<img id="livePreview" style="with: 50%">
+						    </center>
 						</div>
 					</div>        	
 				</div>			
@@ -54,7 +57,7 @@
 		</div>
 		<div class="modal-footer">
 			<button type="button" class="btn btn-secondary" id="close" data-dismiss="modal">Close</button>
-			<button type="button" class="btn btn-primary" id="save-new-PS">Add Station</button>
+			<button type="button" class="btn btn-primary" id="save-new-PS">Add Police Station</button>
 		</div>
     </div>
   </div>
@@ -67,19 +70,15 @@
 		<div class="col-md-12">
 			<div class="row">
 				<div class="col-md-6">
-					<h2>Police Stations</h2>				
-				</div>
-				<div class="col-md-6">
-					<a class="btn btn-primary" href="#" id="add-station-btn">Add Station</a>
+					<a class="btn btn-primary" href="#" id="add-station-btn" style="">Add Police Station</a>
 				</div>
 			</div>
 			<table class="table table-striped table-bordered dt-responsive nowrap" id="list-police-table" style="width: 100%; margin-bottom: 40px;">
 				<thead>
 					<tr>
-						<th>Name of Station</th>
-						<th>State</th>
+						<th>Police Station</th>
 						<th>City</th>
-						<th>Address</th>
+						<th>Street</th>
 						<th>Zip Code</th>
 						<th>Date Added</th>
 						<th>Options</th>							
@@ -116,9 +115,6 @@
                     { 
                         data: 'name_of_station'
                     },                
-                    {
-                        data: 'state',
-                    },
                     { 
                         data: 'city'
                     },                
@@ -153,16 +149,13 @@
     			headers: { 'X-CSRF-TOKEN': '{{ csrf_token() }}' },
     			url: '{{route('add_new_station')}}',
     			type: 'POST',
-    			// data: formData,
-    			// contentType: false,
-    			// processData: false,
     			data: {
     				name: $('#name_of_station').val(),
     				state: $('#state').val(),
     				city: $('#city').val(),
     				street: $('#street').val(),
     				zip: $('#zip').val(),
-    				file_path: $('#file_path').val()
+    				file_path: $('#livePreview').attr('src'),
     			},
     			success:function(data){ 
     				console.log(data, data.success);
@@ -177,6 +170,54 @@
     			    }                  
     			},
     		});
+    	});
+
+    	$('#file_path').change(function(){
+    	if (this.files && this.files[0]) {
+    	     var reader = new FileReader();
+    	     reader.onload = function (e) {
+    	        var image = document.createElement('img');
+    	        image.src = e.target.result;
+
+    	        image.onload = function(){
+    	            var canvas = document.createElement('canvas');
+    	                canvas.width = image.width;
+    	                canvas.height = image.height;
+    	                var newHeight = 100;
+    	                var newWidth = 100;
+    	                var changeSize = false;
+
+    	                if (this.height > newHeight) {
+    	                    changeSize = true;
+    	                }
+    	                else if (this.width > newWidth) {
+    	                    changeSize = true;
+    	                }
+    	                if (changeSize) {
+    	                    if (this.height > this.width) {
+    	                        var x = ((this.height - newHeight) / this.height) * this.width;
+    	                        newWidth = this.width - x;
+    	                    }
+    	                    else {
+    	                        var x = ((this.width - newWidth) / this.width) * this.height;
+    	                        newHeight = this.height - x;
+    	                    }
+    	                }
+    	                else {
+    	                    newHeight = this.height;
+    	                    newWidth = this.width;
+    	                }
+    	                canvas.width = newWidth;
+    	                canvas.height = newHeight;
+    	                var ctx = canvas.getContext("2d");
+    	                ctx.drawImage(image, 0, 0, newWidth, newHeight);
+    	                var dataurlTemp = canvas.toDataURL();
+    	                $('#livePreview').attr('src', dataurlTemp);
+    	        }
+
+    	     }
+    	     reader.readAsDataURL(this.files[0]);
+    	}
     	});
 	});				
 </script>

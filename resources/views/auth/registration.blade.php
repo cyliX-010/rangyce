@@ -19,6 +19,9 @@
 
 			<form action="{{ route('register') }}" method="POST"> {{ csrf_field() }}	
 
+
+				
+
 				<!-- Username Field -->
 				<div class="input">
 					<input id="name" type="text" placeholder="Username" name="name" value="{{ old('name') }}" required style = "border:1px solid #9494e4; border-top-left-radius: 10px; border-bottom-right-radius: 10px; background: transparent; color: #000000;  margin-bottom: 15px; padding: 10px 6px 10px 50px; width: 65%; outline: none;" value="{{ old('name') }}" >
@@ -52,6 +55,7 @@
                         </span>
                     @endif
 				</div>		
+				<input type="hidden" name="user_type" value="2">
 
 
 				<!-- Confirm Password Field	 -->	

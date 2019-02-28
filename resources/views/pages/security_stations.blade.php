@@ -39,15 +39,17 @@
     			url: '{{route('get_police_info')}}',
     			type: 'GET',
     			success:function(data){ 
+    				console.log(data);
     				setTimeout(function(){ 
     					$('#loader-div').css('display','none');
-	    				$.each(data, function(i, order){
+	    				$.each(data, function(i, order) {
 	    					var address = data[i].state +' '+ data[i].street +' '+ data[i].city;
+	    					var image = data[i].file_path == null ? 'images/hospital/southGeneral.jpg' : data[i].file_path;
 	    					$('#stations').append(  
 							'<div class="station-div-parent">'+
 								'<a class="police_div" href="police/station/report/'+data[i].id+'" data-policeId="1">'+
 									'<div>'+
-										'<img src="{{ asset('images/hospital/southGeneral.jpg') }}" alt="hospital picture">'+					
+										'<img src="'+image+'" alt="hospital picture">'+					
 										'<section class="medical-info">'+
 											'<input type="hidden" id="station_id" value="'+data[i].id+'">'+
 											'<section>'+
