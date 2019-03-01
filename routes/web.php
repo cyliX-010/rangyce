@@ -20,14 +20,18 @@
 
 
 /*FOR CLIENT USERS*/
+
+
+
+
 //Login Account Link
-Route::get('/login/account', function () {
-    return view('auth\loginAccount');
+Route::get('/register', function () {
+    return view('auth\register');
 });
 
 //Create Account Link
-Route::get('/create/account', function () {
-    return view('auth\registration');
+Route::get('/login', function () {
+    return view('auth\login');
 });
 
 // Pages
@@ -66,9 +70,6 @@ Route::get('/page/doctor_profile', function () {
     return view('pages\doctor_profile');
 });
 
-Route::get('/page/doctor_appoint', function () {
-    return view('pages\doctor_appointment');
-});
 
 
 //HOME SERVICES
@@ -125,6 +126,8 @@ Route::get('get/hospital/info', ['uses' => 'AdminController@getHospitalInfo'])->
 //DOCTORS
 Route::post('add/new/doctors', ['uses' => 'AdminController@addNewDoctors'])->name('add_new_doctors');
 Route::get('/page/doctor/{id}', ['uses' => 'AdminController@getDoctorList']);
+Route::get('/page/doctor_profile/{id}', ['uses' => 'AdminController@getDoctorInfo']);
+Route::get('/page/doctor_appointment/{id}', ['uses' => 'AdminController@getDoctorIdAppointment']);
 
 
 

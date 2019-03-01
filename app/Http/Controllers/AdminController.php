@@ -201,4 +201,16 @@ class AdminController extends Controller
 		return view('pages\doctor_list', compact('doctor_list'));
 	}
 
+	public function getDoctorInfo($doctor_id)
+	{
+		$doctor_info = \App\User::find($doctor_id);
+		return view('pages\doctor_profile', compact('doctor_info'));
+	}
+
+	public function getDoctorIdAppointment($doctor_id_appoint)
+	{
+		$doctor_appointment = \App\User::find($doctor_id_appoint);
+		return view('pages\doctor_appointment', compact('doctor_appointment'));
+	}
+
 }

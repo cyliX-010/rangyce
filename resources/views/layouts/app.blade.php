@@ -14,17 +14,7 @@
     <link href="{{ asset('css/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/feed/feed.css') }}" rel="stylesheet">
-<!--     <link href="{{ asset('css/badminton.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/doctor.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/entertainment.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/health.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/home.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/index.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/information.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/job-entry.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/list-employee.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/main-style.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/notification.css') }}" rel="stylesheet"> -->
+
 </head>
 <body>
     <div id="app">

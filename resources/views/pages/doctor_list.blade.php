@@ -29,7 +29,7 @@
 			@foreach($doctor_list as $doctor)
 
 			<div class="station-div-parent">
-				<a class="police_div" href="#" data-policeId="1">
+				<a class="police_div" href="../doctor_profile/{{ $doctor->id }}" data-policeId="1">
 					<div>
 						<img src="{{ $doctor->file_path }}" alt="hospital picture">					
 						<section class="medical-info">

@@ -15,23 +15,37 @@
 	</header>
 	<section class="main">
 		<section class="main1">
-			<img src="{{ asset('images/doctor/1.jpg') }}" align="doctor prolile">
+			<img src="{{ $doctor_info->file_path }}" align="doctor prolile">
 
 			<section class="main1-info">
 				<div>
-					<label>Dr. A.H. Harunar Rashid</label>
+					<label>{{ $doctor_info->name }}</label>
 				</div>
 				<div>
-					<label>Child Specialist, DMCH</label>
+					@switch($doctor_info->user_type)
+						@case(31)
+							<label style="color: #696764">Dentist</label>
+						@break
+						@case(32)
+							<label style="color: #696764">Surgeon</label>
+						@break
+						@case(33)
+							<label style="color: #696764">Cardiologist</label>
+						@break
+						@case(34)
+							<label style="color: #696764">Neurologist</label>
+						@break
+					@endswitch	
+					
 				</div>
 				<div>
-					<label class="label-color">98% Average Recommendations</label>
+					<label class="label-color">{{ $doctor_info->email }}</label>
 				</div>
 			</section>
 
 			<section class="main1-btn">
 				<div>
-					<a href="/page/doctor_appoint">Set Appointment</a>
+					<a href="/page/doctor_appointment/{{ $doctor_info->id }}">Set Appointment</a>
 				</div>
 				<div class="btn1">
 					<a href="/page/chat">Online Consultation</a>
@@ -48,19 +62,7 @@
 
 				<section class="education-background">
 					<div>
-						<label>-BDS . M R Ambedkar Medical College - 1997</label>
-					</div>
-
-					<div>
-						<label>- FPFA (USA) . Pierre Fauchard Academy., 2014</label>
-					</div>
-
-					<div>
-						<label>- ICHK (EUROPE) . Faculty Hospital Hradec Kralove</label>
-					</div>
-
-					<div>
-						<label>- University, EUROPE, 2014</label>
+						<label>{{ $doctor_info->education }}</label>
 					</div>
 				</section>
 
@@ -73,7 +75,7 @@
 
 				<section class="education-background">
 					<div>
-						<label>- 2003 - 2013 Doctor at Child Specialist Zone</label>
+						<label>{{$doctor_info->experience}}</label>
 					</div>
 				</section>
 
@@ -85,31 +87,7 @@
 
 				<section class="education-background">
 					<div>
-						<label>- Fellow Pierre Fauchard Academy - 2013</label>
-					</div>
-
-					<div>
-						<label>- International Integrated Child Specialist Training</label>
-					</div>
-
-					<div>
-						<label>&nbsp; program 2014</label>
-					</div>
-				</section>
-
-			</section>
-
-			<section class="main2">
-				
-				<b><label >Membership</label></b>
-
-				<section class="education-background">
-					<div>
-						<label>- Bangladesh Child Specialist Association</label>
-					</div>
-
-					<div>
-						<label>- Pierre Fauchard Academy</label>
+						<label>{{ $doctor_info->awards_recognition }}</label>
 					</div>
 				</section>
 

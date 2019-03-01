@@ -41,9 +41,6 @@ header label{
 	top: 0px;
 }
 
-.h1{
-	text-align: left;
-}
 
 header img{
 	position: absolute;	
@@ -65,7 +62,7 @@ header img{
 }
 
 .main{
-	padding-top: 40px;
+	padding-top: 10px;
 	margin-bottom: 60px;
 }
 
@@ -88,16 +85,19 @@ header img{
 	z-index: 20;
 }
 
-.margin{
-	margin-top: 15px;
+.slideDiv{
+	
+	border: 1px solid #66abe6;
+	width: 95%;
+	height: 160px;
 }
 
-.margin1{
-	margin-top: 10px;
-}
-
-.main-ctrl{
-	margin-bottom: 40px;
+.btnSideMenu{
+	width: 10%;
+	height: 10%;
+	padding-top: 5px;
+	padding-right: 10px;
+	float: right;
 
 }
 
