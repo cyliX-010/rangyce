@@ -8,7 +8,7 @@
 </head>
 <body>
 	<header>
-		<div class="h1"><a href="/page/doctor"><i class="fa fa-arrow-left"></i></a></div>
+		<div class="h1"><a href="/page/doctor/"><i class="fa fa-arrow-left"></i></a></div>
 		<img src="{{ asset('images/rlogo.png') }}" alt="randyce logo">
 		<label>HealthCare Services</label>
 		<!-- <div class="h2"><a href=""><i class="color fa fa-gears (alias)"></i></a></div> -->

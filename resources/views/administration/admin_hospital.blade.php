@@ -98,6 +98,9 @@
                          </div>
                     </div>                            
                 </div>
+                <div>
+                    <input id="doc_password" type="hidden" name="" value="welcome01" >
+                </div>
 
                 <div class="row">
                     <div class="col-md-6">
@@ -250,6 +253,7 @@
                     user_type: $('#doc_type option:selected').val(),
                     doc_hospital_id: $('#doc_hospital_id option:selected').val(),
                     email: $('#doc_email').val(),
+                    password: $('#doc_password').val(),
                     file_path: $('#doc_livePreview').attr('src'),
                 },
                 success:function(data){ 

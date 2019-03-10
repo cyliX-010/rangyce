@@ -1,42 +1,26 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Prototype</title>
-	<link href="{{ asset('css/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
-	<link href="{{ asset('css/health.css') }}" rel="stylesheet">
+@include('web_layouts/side_left')
+<link rel="stylesheet" type="text/css" href="{{ asset('css/never_touch_mc/bootstrap.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ asset('css/never_touch_mc/dataTables.bootstrap4.min.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ asset('css/never_touch_mc/responsive.bootstrap4.min.css') }}">
 
-	@include('libraries.css')
-</head>
-<body>
-	<header>
-		<div class="h1"><a href="/home"><i class="fa fa-arrow-left"></i></a></div>
-		<img src="{{ asset('images/rlogo.png') }}" alt="randyce logo">
-		<label>Hospitals</label>
-	</header>
-	<section class="main">
-		<section class="m1">
-			<input type="text" placeholder="Search Hospital" id="search-criteria">
-		</section>
-		<section class="m1-label">
-			<label>Select Nearest Hospitals</label>
-		</section>
 
-		<div id="loader-div">
-			@include('libraries.loader')
-			@include('libraries.loader')
-			@include('libraries.loader')
-		</div>
 
-		<section class="m1-ctrl" id="stations">						
-		</section>
-	</section>
-	@include('libraries.script')	
+
+
+                                        
+
+
+<section>	
+	<div id="contentDiv" style="position:absolute; top:0px; left: 25%; height: 100%; width: 75%; background-color: #e3e3ec;">
+		<label>{{ auth::User()->id}}</label>
+
+
+		<section>
 	<script type="text/javascript">
 		$(document).ready( function () {
 			$.ajax({
     			headers: { 'X-CSRF-TOKEN': '{{ csrf_token() }}' },
-    			url: '{{route('get_hospital_info')}}',
+    			url: '{{route('get_doctor_list')}}',
     			type: 'GET',
     			success:function(data){ 
     				console.log(data);
@@ -73,21 +57,25 @@
     				},3000);              
     			},
     		});
-
-    		$('#search-criteria').on('input',function(){
-    		  var txt = $('#search-criteria').val();
-    		  if(txt != null)
-    		  {            
-    		    $('.station-div-parent').hide();        
-    		    $('.station-div-parent').each(function(index, d){
-    		      var $this = $(this);
-    		      if($(this).text().toUpperCase().indexOf(txt.toUpperCase()) != -1){
-    		        $(this).show();               
-    		      }
-    		    });     
-    		  }        
-    		});
 		});
 	</script>
-</body>
-</html>
+</section>
+	</div>
+</section>
+
+<style>
+	.station_btn{
+		position: relative; 
+		top: 445px; 
+		left: 6px; 
+		height: 58px; 
+		width: 24%; 
+		background-color: #248cca;
+		margin-top: 3px;
+		padding-top: 15px;
+		padding-left: 90px;
+		color: #fff;
+		font-size: 17px;
+		font-family: arial;
+	}
+</style>

@@ -23,6 +23,7 @@
 			<section class="security-btn-ctrl1">				
 				<div class="security-one">
 					@foreach($station as $st)
+						<input type="text" value="0" id="status" required>
 						<a class="approve_accidents" href="#" data-station_id="{{$st->id}}" data-report_type="Accidents">
 							<div class="security-btn">
 								<img src="{{ asset('images/security/1.png') }}" alt="gallery image" />
@@ -92,6 +93,7 @@ $('.approve_accidents').click(function(){
 	  		data: {
 	  			station_id: $(this).data('station_id'),
 	  			incidents: $(this).data('report_type'),
+	  			status: $('#status').val(),
 	  		},
 	  		success:function(data){ 
 	  			console.log(data);

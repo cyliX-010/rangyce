@@ -77,12 +77,15 @@ class AdminController extends Controller
 		return view('pages.security_report_type', compact('station'));
 	}
 
+
+	//SUBMIT REPORTS
 	public function submitIncidentsReport(Request $request)
 	{
 		$incidents = new \App\Report;
 		$incidents->user_id = Auth::user()->id;
 		$incidents->police_station_id = $request->station_id;
 		$incidents->incidents = $request->incidents;
+		$incidents->status = $request->status;
 		$incidents->save();
 		return response()->json(['success' => true]);
 	}
@@ -156,6 +159,7 @@ class AdminController extends Controller
 		    'user_type' => 'required',
 		    'doc_hospital_id' => 'required',
 		    'email' => 'required',
+		    'password' => 'required',
 		    'file_path' => 'required'
 		);
 
@@ -169,7 +173,8 @@ class AdminController extends Controller
 			$doctor->user_type = $request->user_type;
 			$doctor->name = $request->first_name.' '.$request->last_name;
 			$doctor->doc_hospital_id = $request->doc_hospital_id;	
-			$doctor->email = $request->email;	
+			$doctor->email = $request->email;
+			$doctor->password = bcrypt($request->password);
 			
 		    if (isset($request->file_path)) {
 		        $imgname = str_random(20) . time() . '.jpg';
@@ -209,8 +214,38 @@ class AdminController extends Controller
 
 	public function getDoctorIdAppointment($doctor_id_appoint)
 	{
+		$doctor_id = $doctor_id_appoint;
 		$doctor_appointment = \App\User::find($doctor_id_appoint);
-		return view('pages\doctor_appointment', compact('doctor_appointment'));
+		return view('pages\doctor_appointment', compact('doctor_appointment','doctor_id'));
 	}
+
+	public function policeStationDashboard()
+	{
+		$user = Auth::user()->load('policeStation');
+		$station = $user->policeStation;
+		return view('police_side.station_index', compact('station'));
+	}
+
+	public function policeStationProfile()
+	{
+		$user = Auth::user()->load('policeStation');
+		$station = $user->policeStation;
+		return view('police_side.station_profile', compact('station'));
+	}
+
+	public function policeStationReports()
+	{
+		$user = Auth::user()->load('policeStation');
+		$station = $user->policeStation;
+		return view('police_side.station_reports', compact('station'));
+	}
+
+	public function policeStationNotifications()
+	{
+		$user = Auth::user()->load('policeStation');
+		$station = $user->policeStation;
+		return view('police_side.station_reports', compact('station'));
+	}
+
 
 }

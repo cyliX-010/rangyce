@@ -29,6 +29,10 @@ Route::get('/register', function () {
     return view('auth\register');
 });
 
+Route::post('/logout', function () {
+    return view('auth\login');
+});
+
 //Create Account Link
 Route::get('/login', function () {
     return view('auth\login');
@@ -66,6 +70,12 @@ Route::get('/page/hospitals', function () {
     return view('pages\hospital_list');
 });
 
+Route::get('/page/doctor', function () {
+    return view('pages\doctor_list');
+});
+
+
+
 Route::get('/page/doctor_profile', function () {
     return view('pages\doctor_profile');
 });
@@ -81,17 +91,7 @@ Route::get('/page/home_wantTowork', function () {
     return view('pages\home_wantTowork');
 });
 
-/*FOR ADMIN USERS*/
-//admin login link
-Route::get('/admin/login', function () {
-   return view('auth\adminLogin');
 
-});
-
-//Create Account Link
-Route::get('/admin/register', function () {
-    return view('auth\adminRegister');
-});
 
 
 
@@ -128,6 +128,46 @@ Route::post('add/new/doctors', ['uses' => 'AdminController@addNewDoctors'])->nam
 Route::get('/page/doctor/{id}', ['uses' => 'AdminController@getDoctorList']);
 Route::get('/page/doctor_profile/{id}', ['uses' => 'AdminController@getDoctorInfo']);
 Route::get('/page/doctor_appointment/{id}', ['uses' => 'AdminController@getDoctorIdAppointment']);
+Route::post('add/new/appointment', ['uses' => 'AppointmentController@addAppointment'])->name('add_new_appointment');
+
+
+//POLICE SIDE SYSTEM PAGES
+Route::get('/policeside/station_home', ['uses' => 'AdminController@policeStationDashboard'])->name('station_dashboard');
+Route::get('/policeside/station_profile', ['uses' => 'AdminController@policeStationProfile'])->name('station_profile');
+Route::get('/policeside/station_reports', ['uses' => 'AdminController@policeStationReports'])->name('station_reports');
+Route::get('get/list/reports', ['uses' => 'PoliceStationAdminController@getListReports'])->name('get_list_Reports');
+Route::post('update/statusreports', ['uses' => 'PoliceStationAdminController@UpdateReports'])->name('update_StatusReports');
+Route::post('update/station_info', ['uses' => 'PoliceStationAdminController@UpdateStationInfo'])->name('update_station_info');
+Route::POST('update/manager_info', ['uses' => 'PoliceStationAdminController@UpdateManagerInfo'])->name('update_manager_info');
+// Route::get('/policeside/station_home', function () {
+//     return view('police_side\station_index');
+// });
+
+/*Route::get('/policeside/station_profile', function () {
+    return view('police_side\station_profile');
+});
+
+Route::get('/policeside/station_reports', function () {
+    return view('police_side\station_reports');
+});*/
+
+/*Route::get('/policeside/station_notifications', function () {
+    return view('police_side\station_notifications');
+});
+*/
+
+
+
+//HOSPITAL SIDE SYSTEM PAGES
+
+Route::get('/hospital/home', function () {
+    return view('hospital_side\hospital_index');
+});
+Route::get('get/doctors/list', ['uses' => 'HospitalSytemController@getDoctorList'])->name('get_doctor_list');
+
+
+
+
 
 
 

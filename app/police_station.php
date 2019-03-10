@@ -8,5 +8,10 @@ class police_station extends Model
 {
     //
 
-    protected $fillable = ['name_of_station','state', 'city', 'street', 'zip'  ];
+    protected $fillable = ['name_of_station','description', 'city', 'street', 'zip'];
+
+    public function userPolice()
+    {
+    	return $this->hasMany('App\User');
+    }
 }
